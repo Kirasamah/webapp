@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="myThingsApp">
+<head>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<!--this doesn't work, have to put styles in header :/
+	<link rel="stylesheet" type="text/css" href="/../css/style.css">
+	-->
+	<title>MyThings</title>
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/angular.min.js"></script>
+
+	<!--Styling part!-->
+	<style>
+	.bg-1 {
+		background-color:#77CC00;
+		color:#fff;
+	}
+
+	.panel-default > .panel-heading {
+		background-color: #cc99ff;
+		font-style: italic;
+		font-family: "Georgia", serif;
+	}
+
+	.panel-default {
+		background-color: #d9b3ff;
+	}
+
+	body {
+		background-color: #e6ccff;	
+	}
+	</style>
+
+</head>
+<body>
+	<div class="panel panel-default">
+		<div class="panel-heading text-center">
+			<h1>Welcome to your thing management app!</span></h1>
+		</div>
+
+		<div class="panel-body">
+			<form action="/things">
+				<input type="submit" class="btn btn-primary btn-block" value="Go to your things"/>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

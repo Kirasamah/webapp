@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MyThings</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/../js/all.js"></script>
+
+        <!--Styling part!-->
+  <style>
+  .bg-1 {
+    background-color:#77CC00;
+    color:#fff;
+  }
+
+  .panel-default > .panel-heading {
+    background-color: #cc99ff;
+    font-style: italic;
+    font-family: "Georgia", serif;
+  }
+
+  .panel-default {background-color: #d9b3ff;}
+
+  body {background-color: #e6ccff; }
+  td {padding: 5px;}
+  tr {}
+.page-data{padding:10px;}
+.label{color:#000; font-size: 14px; padding-left:10px; padding-top:15px;}
+.inpArea{width:100%}
+  </style>
+
+
+    </head>
+    <body>
+      <div class="panel panel-default">
+          <div class="panel-heading text-center">
+            <h1>Your Things</span></h1>
+          </div>
+
+          <div class="panel-body">
+
+<div class="page-data">
+            
+            <form method="post" action="/things/add">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">Name</td>
+                    <td> <input type="text" class="inpArea" name="name" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label" valign="top">Description</td>
+                    <td valign="top"> <textarea name="description" class="inpArea" required cols="30" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td class="label">Latitude</td>
+                    <td> <input type="text" class="inpArea" name="latitude" required></td>
+                 </tr>
+                  <tr>
+                    <td class="label">Longitude</td>
+                    <td> <input type="text" class="inpArea" name="longitude" required></td>
+                 </tr>
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; 
+                      <input type="submit" name="submit" value="Save">
+                      <input type="button" name="cancel" value="Cancel" class="cancel" onClick="window.location.href = '/things'">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+</div>
+
+ </div>
+      </div>
+
+      <div id="footer">        
+      </div>
+
+    </body>
+</html>

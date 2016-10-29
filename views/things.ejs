@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MyThings</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/../js/all.js"></script>
+
+        <!--Styling part!-->
+  <style>
+  .bg-1 {
+    background-color:#77CC00;
+    color:#fff;
+  }
+
+  .panel-default > .panel-heading {
+    background-color: #cc99ff;
+    font-style: italic;
+    font-family: "Georgia", serif;
+  }
+
+  .panel-default {background-color: #d9b3ff;}
+
+  body {background-color: #e6ccff; }
+
+  td {padding: 5px; text-align:center;}
+  tr {padding: 5px; text-align:center;}
+
+.data-table{background-color: #f2e6ff; padding-left:10px; }
+.data-table table{border-collapse:collapse;border:1px solid #ddd; width:100%}
+.a-inside{padding:4px 10px;border:1px solid #fff;text-decoration:none;}
+.a-inside.edit{background-color:#8000ff;color:#fff;}
+.a-inside.delete{background-color:#400080;color:#fff;}
+.a-inside.view{background-color:#3333cc;color:#fff;}
+
+  </style>
+
+
+    </head>
+    <body>
+      <div class="panel panel-default">
+          <div class="panel-heading text-center">
+            <h1>Your Things</span></h1>
+          </div>
+
+          <div class="panel-body">
+
+            <div class="data-table">
+              <table border="1" cellpadding="7" cellspacing="7">
+                <tr>
+                    <th width="50px">No</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th width="180px">Action</th>
+                </tr>
+                               
+                <% if(data.length){             
+                 for(var i = 0;i < data.length;i++) { %>
+                 
+                <tr>
+                    <td><%=(i+1)%></td>
+                    <td><%=data[i].name%></td>
+                    <td><%=data[i].description%></td>
+                    <td><%=data[i].latitude%></td>
+                    <td><%=data[i].longitude%></td>
+                    <td>
+                      <a class="a-inside edit" href="../things/edit/<%=data[i].id%>">Edit</a>
+                      <a class="a-inside delete" href="../things/delete/<%=data[i].id%>">Delete</a>
+                      <a class="a-inside view" href="../things/map/<%=data[i].id%>">View</a>
+                    </td>
+                </tr>
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No user</td>
+                 </tr>
+              <% } %>  
+              </table>
+            </div>
+
+            <form action="/things/add/">
+              <br>
+              <input type="submit" class="btn btn-primary btn-block" value="Add new thing"/>
+            </form>
+
+          </div>
+      </div>
+
+      <div id="footer">        
+      </div>
+
+    </body>
+</html>
